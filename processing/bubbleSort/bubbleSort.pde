@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-float[] numbers = new float[100];
+float[] numbers = new float[1000];
 
 void setup() {
   size(600, 400);
@@ -17,6 +17,13 @@ void draw() {
   drawBars();
   
   // sorting algorithm here (just one step)
+  for (int i = 0; i < numbers.length - 1; i++){
+    if (numbers[i] > numbers[i + 1]){
+      float temp = numbers[i];
+      numbers[i] = numbers[i + 1];
+      numbers[i + 1] = temp;
+    }
+  }
 }
 
 void drawBars() {
