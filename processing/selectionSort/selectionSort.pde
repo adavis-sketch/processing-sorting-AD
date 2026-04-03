@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
-float[] numbers = new float[1000];
-int swap = 1;
+float[] numbers = new float[100];
+int swap = 0;
 
 void setup() {
   size(600, 400);
@@ -18,10 +18,20 @@ void draw() {
   drawBars();
   
   // sorting algorithm here (just one step)
-  for (int i = 0; i < numbers.length - swap; i++){
-    float tempMax = numbers[0]
-    if (numbers[i] > tempMax)
+  if (swap < numbers.length - 1) {
+    int maxIndex = 0;
+    for (int i = 0; i < numbers.length - swap; i++) {
+      if (numbers[i] > numbers[maxIndex]) {
+        maxIndex = i;
+      }
+    }
+    int lastIndex = numbers.length - 1 - swap;
+    float temp = numbers[lastIndex];
+    numbers[lastIndex] = numbers[maxIndex];
+    numbers[maxIndex] = temp;
+    swap++;
   }
+  
 }
 
 void drawBars() {
