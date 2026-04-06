@@ -1,11 +1,11 @@
 import java.util.Arrays;
 
-float[] numbers = new float[100];
+float[] numbers = new float[1000];
 int swap = 0;
 
 void setup() {
   size(600, 400);
-  frameRate(4);
+  frameRate(60);
   
   for (int i = 0; i < numbers.length; i++) {
     numbers[i] = (float)Math.random();
